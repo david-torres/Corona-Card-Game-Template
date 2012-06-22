@@ -1,7 +1,7 @@
 Corona Card Game Template
 =========================
 
-This project is a basic template for making card games using the [Corona SDK](http://www.coronalabs.com/) (version 2012.840).
+This project is a basic template for making card games using the [Corona SDK](http://www.coronalabs.com/) (version 2012.840). I mainly made this for myself but figured I'd put it out there in case someone found an example project like this useful. This my first attempt at game development, any feedback is greatly appreciated.
 
 Assets are from the following sources:
 
