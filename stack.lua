@@ -65,6 +65,9 @@ function Stack:new (card_data)
     -- draw N cards from the top of this stack
     local draw = function(n)
         local drawn_cards = {}
+        if n == nil then
+            return self.deal()
+        end
         for i = 1, n do 
             local card = table.remove(self.cards, 1)
             table.insert(drawn_cards, card)
@@ -99,8 +102,25 @@ function Stack:new (card_data)
         return #self.cards
     end
 
+    -- replace a card with another
+    local replace = function(i, card)
+        self.cards[i] = card
+    end
+
+    -- sort
+    local sort = function(f)
+        if f ~= nil then
+            table.sort(self.cards, f)
+        else
+            table.sort(self.cards)
+        end
+    end
+
     -- cards getter
-    local cards = function()
+    local cards = function(i)
+        if i ~= nil then
+            return self.cards[i]
+        end
         return self.cards
     end
 
@@ -113,6 +133,8 @@ function Stack:new (card_data)
         add = add,
         combine = combine,
         count = count,
+        replace = replace,
+        sort = sort,
     }
 end
 
